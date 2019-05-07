@@ -30,7 +30,7 @@ class ManagerFunctionGUI extends JFrame implements ActionListener {
 
 	private QueryUserInfoGUI queryUserInfoGUI;
 	private EnrollmentGUI enrollmentGUI;
-	private UsageInformationGUI usageInformationGUI;
+	private UsageInfoGUI usageInfoGUI;
 	private ScooperStateGUI scooperStateGUI;
 	private SendEmailGUI sendEmailGUI;
 	private ManagerDockSelectGUI managerDockSelectGUI;
@@ -114,7 +114,7 @@ class ManagerFunctionGUI extends JFrame implements ActionListener {
 			scooperStateGUI = new ScooperStateGUI(dockList);
 		}
 		else if(eventSource.equals(this.usageInformationButton)) {
-			usageInformationGUI = new UsageInformationGUI(userList,transactionList);
+			usageInfoGUI = new UsageInfoGUI(userList,transactionList);
 		}
 		else if(eventSource.equals(this.sendEmailButton)) {
 			sendEmailGUI = new SendEmailGUI(userList,transactionList);
