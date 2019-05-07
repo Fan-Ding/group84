@@ -1,3 +1,3 @@
-ID,Dock,Slot,Picking_or_not,Year,Month,Date,Hour,Minute
-161189147,2,2,true,2019,5,1,2,31
-161189148,1,2,true,2019,5,1,14,34
+ID,Dock,Slot,Picking_or_not,Year,Month,Date,Hour,Minute,isOverTime
+161189147,2,2,TRUE,2019,5,1,2,31,FALSE
+161189148,1,2,TRUE,2019,5,1,14,34,FALSE
