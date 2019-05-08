@@ -23,20 +23,8 @@ public class FtoSelectDock extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-					FtoSelectDock frame = new FtoSelectDock();
-					frame.setVisible(true);
-	}
-
-	/**
-	 * Create the frame.
-	 */
 	public FtoSelectDock() {
-		JFrame jf = new JFrame("Fail");
-		
+		JFrame jf = new JFrame("Fail");		
 		Toolkit tk = this.getToolkit();// 得到窗口工具条
 		int width = 650;
 		int height = 500;

@@ -23,19 +23,6 @@ public class PayaFine extends JFrame {
 
 	private JPanel contentPane;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-
-					PayaFine frame = new PayaFine(Qmnum,userlist);
-					frame.setVisible(true);
-
-	}
-
-	/**
-	 * Create the frame.
-	 */
 	public PayaFine(int Qmnum,UserList userlist) {     
 		
 		JFrame jf = new JFrame("Pay");
@@ -66,17 +53,17 @@ public class PayaFine extends JFrame {
 		panel_1.setBounds(10, 160, 416, 64);
 		contentPane.add(panel_1);
 		
-		JButton btnPay = new JButton("Pay");
+		JButton btnPay = new JButton("Pay"); //Pay 按钮
 		btnPay.setBounds(10, 0, 172, 65);
 		btnPay.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource()==btnPay)
 		        {
-					if(userlist.isBan(Qmnum)==true) {
+					if(userlist.isBan(Qmnum)==true) {    //账户被ban
 					btnPay.setText("Paid successfully!");
-					userlist.unban(Qmnum);
+					userlist.unban(Qmnum);               //账户状态在交罚款后改为未ban
 		     		}
-					else {
+					else {                               //账户未ban
 						btnPay.setText("Account isn't banned!");
 					}
 
@@ -86,7 +73,7 @@ public class PayaFine extends JFrame {
 		panel_1.setLayout(null);
 		panel_1.add(btnPay);
 		
-		JButton btnCancel = new JButton("Cancel");
+		JButton btnCancel = new JButton("Cancel");      //取消按钮
 		btnCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource()==btnCancel)
