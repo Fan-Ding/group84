@@ -93,7 +93,7 @@ public class EnrollmentGUI implements ActionListener {
 
 		enroll = new JButton("Enroll");
 		enroll.addActionListener(this);
-		returnButton = new JButton("Return");
+		returnButton = new JButton("Save");
 		returnButton.addActionListener(this);
 
 		cPanel.add(IDLabel);
