@@ -43,25 +43,25 @@ public class QueryUserInfoGUI implements ActionListener {
 			area.setText("");
 			area.append(userList.oneUserInfo(ID));
 		}
-		if(userList.oneUserInfo(ID) == null) {
+		if (userList.oneUserInfo(ID) == null) {
 			label.setText("can't find this user!");
-		}else {
-			if(e.getSource() == ban) {
+		} else {
+			if (e.getSource() == ban) {
 				userList.ban(ID);
 				area.setText("");
 				area.append(userList.oneUserInfo(ID));
 			}
-			if(e.getSource() == unban) {
+			if (e.getSource() == unban) {
 				userList.unban(ID);
 				area.setText("");
 				area.append(userList.oneUserInfo(ID));
 			}
-			if(e.getSource() == unuse) {
+			if (e.getSource() == unuse) {
 				userList.unban(ID);
 				area.setText("");
 				area.append(userList.oneUserInfo(ID));
 			}
-			if(e.getSource() == del) {
+			if (e.getSource() == del) {
 				userList.delete(ID);
 				area.setText("");
 				area.append(userList.oneUserInfo(ID));
@@ -107,7 +107,7 @@ public class QueryUserInfoGUI implements ActionListener {
 			area.append("no user at all");
 		} else {
 			for (int i = 0; i < s.length; i++) {
-				area.append(s[i]);
+				area.append(s[i] + "\n");
 			}
 		}
 	}
