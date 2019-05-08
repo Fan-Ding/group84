@@ -4,6 +4,10 @@ import java.awt.*;
 import java.awt.event.*;
 import module.*;
 
+/**
+ * @author ZouShiwen
+ *
+ */
 public class DockStateGUI {
 
 	JFrame frame;
@@ -14,6 +18,9 @@ public class DockStateGUI {
 	int dockNum;
 	DockList dockList;
 	
+	/**
+	  * Constructor displaying all slots' states of a dock
+	  */
 	 public DockStateGUI(int dock, DockList docklist) {
 		 dockNum=dock;
 		 dockList=docklist;
@@ -46,7 +53,10 @@ public class DockStateGUI {
 			frame.setSize(800,800);
 			frame.setVisible(true);
 	 }
-	
+	 
+	 /**
+	  * Convert slot boolean states into words.
+	  */
 	public void checkSlotsState(int dock) {
 		boolean[] dockState=new boolean[8];
 		dockState=dockList.dockState(dock);
@@ -59,6 +69,9 @@ public class DockStateGUI {
 	    }
 	}
 	
+	/**
+	  * Subclass to perform action of returning to main GUI
+	  */
 	class ButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
 			frame.dispose();

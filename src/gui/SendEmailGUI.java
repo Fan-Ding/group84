@@ -5,6 +5,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import module.*;
 
+/**
+ * @author ZouShiwen
+ *
+ */
 public class SendEmailGUI {
 	
 	JFrame frame;
@@ -17,6 +21,9 @@ public class SendEmailGUI {
 	TransactionList transactionList;
 	int id;
 	
+	/**
+	  * Constructor searching and sending email to users
+	  */
 	public SendEmailGUI(UserList userlist, TransactionList transactionlist) {
 		userList=userlist;
 		transactionList=transactionlist;
@@ -63,6 +70,10 @@ public class SendEmailGUI {
 		frame.setVisible(true);
 	}
     
+	/**
+	  * Subclass to perform action of searching for users usage with id
+	  * and display them in text area
+	  */
     class SearchButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
 			String input=textfield.getText();
@@ -76,12 +87,19 @@ public class SendEmailGUI {
 		}
 	}
     
+    /**
+	  * Subclass to perform action of sending email to specific user
+	  * and generate file
+	  */
     class EmailButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
 			transactionList.sendEmail(id);
 		}
 	}
     
+    /**
+	  * Subclass to perform action of returning to main GUI
+	  */
     class RetButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
 			frame.dispose();

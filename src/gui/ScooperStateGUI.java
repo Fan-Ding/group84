@@ -4,7 +4,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import module.*;
-
+    
+/**
+ * @author ZouShiwen
+ *
+ */
 public class ScooperStateGUI {
 	
 	JFrame frame;
@@ -15,6 +19,9 @@ public class ScooperStateGUI {
 	private int parkedNum=0;
 	private int usedNum=0;
 	
+	/**
+	  * Constructor searching all scooper state and displaying
+	  */
 	public ScooperStateGUI(DockList docklist) {
 		dockList=docklist;
 		calculateScooperInUse(dockList);
@@ -50,12 +57,18 @@ public class ScooperStateGUI {
 		frame.setVisible(true);
 	}
 	
+	/**
+	  * Subclass to perform action of returning to main GUI
+	  */
 	class ButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
 			frame.dispose();
 		}
 	}
 	
+	/**
+	  * Method to calculate number of all used and parked scoopers
+	  */
 	public void calculateScooperInUse(DockList dockList) {
 		boolean[][] scooperState=new boolean[3][8];
 		for(int i=0;i<3;i++) {

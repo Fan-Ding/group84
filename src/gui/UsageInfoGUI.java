@@ -5,6 +5,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import module.*;
 
+/**
+ * @author ZouShiwen
+ *
+ */
 public class UsageInfoGUI {
 
 	JFrame frame;
@@ -14,6 +18,9 @@ public class UsageInfoGUI {
 	UserList userList;
 	TransactionList transactionList;
 	
+	/**
+	  * Constructor displaying all usage information
+	  */
 	public UsageInfoGUI(UserList userlist,TransactionList transactionlist) {
 		userList=userlist;
 		transactionList=transactionlist;
@@ -44,7 +51,9 @@ public class UsageInfoGUI {
 		frame.setVisible(true);
 	}
 	
-	
+	/**
+	  * Subclass to perform action of returning to main GUI
+	  */
 	class ButtonListener implements ActionListener {
 		public void actionPerformed(ActionEvent event) {
 			frame.dispose();
