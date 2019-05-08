@@ -157,6 +157,15 @@ public class UserList {
 			System.out.println("ID is not existed");
 		}
 	}
+	
+	public void unuse(int ID) {
+		int i = search(ID);
+		if (i >= 0) {
+			userList.get(i).setUsing(false);
+		} else {
+			System.out.println("ID is not existed");
+		}
+	}
 
 	/**
 	 * check if ID exists

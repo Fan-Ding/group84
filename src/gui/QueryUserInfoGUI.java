@@ -57,7 +57,7 @@ public class QueryUserInfoGUI implements ActionListener {
 				area.append(userList.oneUserInfo(ID));
 			}
 			if (e.getSource() == unuse) {
-				userList.unban(ID);
+				userList.unuse(ID);
 				area.setText("");
 				area.append(userList.oneUserInfo(ID));
 			}
