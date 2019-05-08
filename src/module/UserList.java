@@ -19,9 +19,6 @@ public class UserList {
 		load();
 	}
 
-	public ArrayList<User> getUserList() {
-		return userList;
-	}
 
 	/**
 	 * load all user's information from the file to ArrayList
@@ -229,6 +226,25 @@ public class UserList {
 	 */
 	public int length() {
 		return userList.size();
+	}
+	
+	public String[] allInfo() {
+		if(userList.size() == 0) {
+			return null;
+		}
+		String[] s = new String[userList.size()];
+		for(int i = 0; i<userList.size(); i++) {
+			s[i] = userList.get(i).toString();
+		}
+		return s;
+	}
+	
+	public String oneUserInfo(int ID) {
+		int i = search(ID);
+		if(i == -1) {
+			return null;
+		}
+		return userList.get(i).toString();
 	}
 
 }
