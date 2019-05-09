@@ -27,10 +27,10 @@ public class UsageInfoGUI {
 		
 		frame=new JFrame();
 		Font Font1=new Font("arial", Font.PLAIN, 20);
-		textarea=new JTextArea(30,40);
+		textarea=new JTextArea(40,50);
 		textarea.setFont(Font1);
 		String[] line=transactionList.allTrans();
-		textarea.setText("       ID           | Dock | Slot | Is Picked  | Year |  Month |  Date |  Hour |  Minutes | OverTime\n");
+		textarea.setText("       ID         | Dock | Slot  |  Is Picked |  Year |  Month  |   Date  |  Hour  |  Minutes  | isOverTime\n");
 		for(int i=0;i<line.length;i++) {
 				textarea.append(line[i]);
 		}
@@ -47,7 +47,7 @@ public class UsageInfoGUI {
 		panel3.add(panel2);
 		frame.getContentPane().add(BorderLayout.CENTER,panel3);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(800,800);
+		frame.setSize(900,800);
 		frame.setVisible(true);
 	}
 	

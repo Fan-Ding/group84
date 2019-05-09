@@ -75,16 +75,38 @@ public class SendEmailGUI {
 	  * and display them in text area
 	  */
     class SearchButtonListener implements ActionListener {
-		public void actionPerformed(ActionEvent event) {
-			String input=textfield.getText();
-			id = Integer.parseInt(input);
-			String[] line=transactionList.allUserTrans(id);
-			for(String cell : line) {
-				textarea.append(cell+"\n");
+    	public void actionPerformed(ActionEvent event) {
+			try {
+			     String input=textfield.getText();
+				 id = Integer.parseInt(input);
+				 if(userList.checkIDFormat(id)==true ) {
+					    if(userList.checkIDExist(id)==true) {  
+					    	String[] line =transactionList.allUserTrans(id);
+					    	if(line!=null) {
+					            label.setText("Valid input id.");
+					            for(String cell : line) {
+								       textarea.append(cell+"\n");
+								}
+					        }else {
+					        	label.setText("Registered user has no transaction.");
+					        }
+					        
+					     }else {
+					    	 label.setText("Not registered input id. Write again.");
+					     }
+				     }else {
+					      label.setText("Invalid Id format. Write again.");
+				     }
 			}
-			textfield.setText(""); 
-			textfield.requestFocus();
+			catch (NumberFormatException n){
+				label.setText("Invalid integer format. Write again.");
+			}
+			catch (NullPointerException e) {
+				label.setText("Please input id.");
+			}
+			
 		}
+
 	}
     
     /**
