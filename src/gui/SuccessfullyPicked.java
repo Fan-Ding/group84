@@ -1,4 +1,4 @@
-package tanzijing;
+package gui;
 
 import javax.swing.JFrame;
 import java.awt.BorderLayout;
@@ -14,11 +14,11 @@ public class SuccessfullyPicked {
 
 	public SuccessfullyPicked() {
 		initialize();
-		frame.setVisible(true);
 	}
 
 	private void initialize() {
 		frame = new JFrame();
+		frame.setVisible(true);
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		

@@ -1,11 +1,17 @@
-package tanzijing;
+package gui;
 
 import java.awt.*;
 import javax.swing.*;
+import javax.swing.text.html.HTML.Tag;
+
+import org.omg.CORBA.PRIVATE_MEMBER;
+
+import com.sun.jndi.url.iiopname.iiopnameURLContextFactory;
 
 import module.*;
 
 import java.awt.event.ActionListener;
+import java.util.Set;
 import java.awt.event.ActionEvent;
 
 public class SelectScootersGUI {
@@ -17,18 +23,20 @@ public class SelectScootersGUI {
 	private UserList userList;
 	private DockList dockList;
 	private boolean Pressed = false;//用于判断按键是否被触发。
-	private boolean timeout = false;//判断等待是否超时
+	private boolean timeout = false;
+	private boolean press = false;//判断等待是否超时
 
 	public SelectScootersGUI(int studID,int dockID, UserList userList,DockList dockList) {
 		this.dockID = dockID;
 		this.studID = studID;
 		this.dockList = dockList;
 		this.userList = userList;
-		frame.setVisible(true);
+	
 		initialize();
 	}
 	private void initialize() {
 		frame = new JFrame();
+		frame.setVisible(true);
 		frame.setBounds(100, 100, 453, 301);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -52,7 +60,7 @@ public class SelectScootersGUI {
 		CounterLabel.setBackground(Color.GRAY);
 		CounterLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		CounterLabel.setBounds(0, 0, 89, 82);
-		CounterLabel.setFont(new Font("微软雅黑", Font.PLAIN, 67));
+		CounterLabel.setFont(new Font("微软雅黑", Font.PLAIN, 40));
 		CounterPanel.add(CounterLabel);
 
 		JLabel lblTimeRemaing = new JLabel("TIME REMIANING");
@@ -67,8 +75,8 @@ public class SelectScootersGUI {
 		panel_1.setLayout(null);
 
 		JButton button_1 = new JButton("1");
-		button_1.setForeground(Color.RED);
-		button_1.setBackground(Color.RED);
+		//button_1.setForeground(Color.RED);
+		//button_1.setBackground(Color.RED);
 		
 		button_1.setBounds(46, 31, 41, 27);
 		panel_1.add(button_1);
@@ -109,7 +117,7 @@ public class SelectScootersGUI {
 		button[5] = button_5;
 		button[6] = button_6;
 		button[7] = button_7;
-		button[8] = button_8;
+		button[8] = button_8;		
 
 		TransactionList transactionList = new TransactionList();
 		int slotID = dockList.pickWhich(dockID)+1;//判断当前解锁的slot号。小组成员数字范围[0,7]，此处为[1,8]
@@ -120,104 +128,39 @@ public class SelectScootersGUI {
 						// TODO Auto-generated constructor stub
 					}
 					public void run() {
-						int time = 60;
+						int time = 60;  //倒计时时间设置
 						while (Pressed == false && time >=0) {//tag用于判断是否有事件，time进行计数
 							CounterLabel.setText(time+"s");
 							flashLED();
 							 try {
-					                Thread.sleep(1000);
+					                Thread.sleep(333);
+					                flashLED();
+					                Thread.sleep(333);
+					                flashLED();
+					                Thread.sleep(334);
 					            } catch (InterruptedException e) {
 					                e.printStackTrace();
 					            }
 					         	time--;
 						}
-						if(Pressed == false && time <0)
-							timeout = true;
+						if(time < 0 && !press) {
+							PickFailed GUI = new PickFailed(studID, dockID, userList, dockList);
+							frame.dispose();
+						}
 					}
 					public void flashLED() {
-						switch(slotID) {
-						case 1:
-							if(button_1.getForeground()==Color.BLACK) {
-								button_1.setForeground(Color.RED);
-								button_1.setBackground(Color.RED);
-							}
-							else {
-								button_1.setForeground(Color.BLACK);
-								button_1.setBackground(Color.BLACK);
-							}break;	
-						case 2:
-							if(button_2.getForeground()==Color.BLACK) {
-								button_2.setForeground(Color.RED);
-								button_2.setBackground(Color.RED);
-							}
-							else {
-								button_2.setForeground(Color.BLACK);
-								button_2.setBackground(Color.BLACK);
-							}break;
-						case 3:
-							if(button_3.getForeground()==Color.BLACK) {
-								button_3.setForeground(Color.RED);
-								button_3.setBackground(Color.RED);
-							}
-							else {
-								button_3.setForeground(Color.BLACK);
-								button_3.setBackground(Color.BLACK);
-							}
-							break;
-						case 4:
-							if(button_4.getForeground()==Color.BLACK) {
-								button_4.setForeground(Color.RED);
-								button_4.setBackground(Color.RED);
-							}
-							else {
-								button_4.setForeground(Color.BLACK);
-								button_4.setBackground(Color.BLACK);
-							}
-							break;
-						case 5:
-							if(button_5.getForeground()==Color.BLACK) {
-								button_5.setForeground(Color.RED);
-								button_5.setBackground(Color.RED);
-							}
-							else {
-								button_5.setForeground(Color.BLACK);
-								button_5.setBackground(Color.BLACK);
-							}
-							break;
-						case 6:
-							if(button_6.getForeground()==Color.BLACK) {
-								button_6.setForeground(Color.RED);
-								button_6.setBackground(Color.RED);
-							}
-							else {
-								button_6.setForeground(Color.BLACK);
-								button_6.setBackground(Color.BLACK);
-							}
-							break;
-						case 7:
-							if(button_7.getForeground()==Color.BLACK) {
-								button_7.setForeground(Color.RED);
-								button_7.setBackground(Color.RED);
-							}
-							else {
-								button_7.setForeground(Color.BLACK);
-								button_7.setBackground(Color.BLACK);
-							}
-							break;
-						case 8:
-							if(button_8.getForeground()==Color.BLACK) {
-								button_8.setForeground(Color.RED);
-								button_8.setBackground(Color.RED);
-							}
-							else {
-								button_8.setForeground(Color.BLACK);
-								button_8.setBackground(Color.BLACK);
-							}
-							break;
 						
+							if(button[slotID].getForeground()==Color.BLACK) {
+								button[slotID].setForeground(Color.RED);
+								//button[slotID].setBackground(Color.RED);
+							}
+							else {
+								button[slotID].setForeground(Color.BLACK);
+								//button[slotID].setBackground(Color.BLACK);
+							}
 					}
-					 }
-			}
+				}
+			
 				//开始倒计时与监听
 				CounterRunnable counter = new CounterRunnable();
 				Thread thread = new Thread(counter);
@@ -234,49 +177,19 @@ public class SelectScootersGUI {
 						transactionList.newTrans(studID, dockID, slotID-1, true, false);
 						dockList.pickScooter(dockID,slotID-1);//更改该slot状态。“-1”为下标偏移量。
 						userList.pickRecord(studID);
-						nextGUI();
+						SuccessfullyPicked GUI = new SuccessfullyPicked();
+						press = true;
+						frame.dispose();
 					}
-				}
-			}
-			private void nextGUI() {
-				if (Pressed == true) {
-					SuccessfullyPicked GUI = new SuccessfullyPicked();
-				}
-				else {
-					PickFailed GUI = new PickFailed(studID, dockID, userList, dockList);
 				}
 			}
 		}
 			// Create actionListener
-				RedButtonListener Listener_1 = new RedButtonListener();
-				RedButtonListener Listener_2 = new RedButtonListener();
-				RedButtonListener Listener_3 = new RedButtonListener();
-				RedButtonListener Listener_4 = new RedButtonListener();
-				RedButtonListener Listener_5 = new RedButtonListener();
-				RedButtonListener Listener_6 = new RedButtonListener();
-				RedButtonListener Listener_7 = new RedButtonListener();
-				RedButtonListener Listener_8 = new RedButtonListener();
-
-			// associate actions with buttons
-				button_1.addActionListener(Listener_1);
-				button_2.addActionListener(Listener_2);
-				button_3.addActionListener(Listener_3);
-				button_4.addActionListener(Listener_4);
-				button_5.addActionListener(Listener_5);
-				button_6.addActionListener(Listener_6);
-				button_7.addActionListener(Listener_7);
-				button_8.addActionListener(Listener_8);
-	}
-	public int getDockID() {
-		return dockID;
-	}
-	public int getStudID() {
-		return studID;
-	}
-	public UserList getUserList() {
-		return userList;
-	}
-	public DockList getDockList() {
-		return dockList;
+		RedButtonListener listener[] = new RedButtonListener[200];
+			for(int i=1;i<9;i++) {
+				listener[i] = new RedButtonListener();
+			}
+			button[slotID].addActionListener(listener[slotID]);
 	}
 }
+				 

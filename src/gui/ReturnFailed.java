@@ -1,4 +1,4 @@
-package tanzijing;
+package gui;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -27,14 +27,13 @@ public class ReturnFailed {
 		this.dockID = dockID;
 		this.userList = userList;
 		this.dockList = dockList;
-		
-		frame.setVisible(true);
 		initialize();
 	}
 
 
 	private void initialize() {
 		frame = new JFrame();
+		frame.setVisible(true);
 		frame.setBackground(Color.WHITE);
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
