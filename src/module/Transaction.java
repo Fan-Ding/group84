@@ -73,7 +73,7 @@ public class Transaction {
 		} else if (isPick == false) {
 			picked = "Return";
 		}
-		return "          " + picked + "               " + cal.get(Calendar.YEAR) + "-" + (cal.get(Calendar.MONTH) + 1)
+		return "          " + picked + "\t        " + cal.get(Calendar.YEAR) + "-" + (cal.get(Calendar.MONTH) + 1)
 				+ "-" + cal.get(Calendar.DATE) + " " + cal.get(Calendar.HOUR_OF_DAY) + ":" + cal.get(Calendar.MINUTE)
 				+ "            " + dock + "                " + slot + "                " + isOverTime + "\n";
 	}
