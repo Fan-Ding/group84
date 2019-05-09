@@ -81,9 +81,7 @@ public class TransactionList {
 	 * load a particular user's transaction into ArrayList
 	 */
 	public void loadUserTrans(int ID) {
-		if (this.transList == null) {
-			loadTrans();
-		}
+		loadTrans();
 		userTrans = new ArrayList<Transaction>();
 		System.out.println("load all transactions of " + ID);
 		for (int i = 0; i < transList.size(); i++) {
@@ -100,9 +98,7 @@ public class TransactionList {
 	 * send Email by generate a file at "src/ID.csv"
 	 */
 	public void sendEmail(int ID) {
-		if (userTrans == null || userTrans.get(0).getID() != ID) {
-			loadUserTrans(ID);
-		}
+		loadUserTrans(ID);
 		try {
 			System.out.println("sending email...");
 			File csv = new File("src/" + ID + ".csv");
@@ -128,9 +124,7 @@ public class TransactionList {
 	 * return all transaction by a String array
 	 */
 	public String[] allTrans() {
-		if (this.transList == null) {
-			loadTrans();
-		}
+		loadTrans();
 		String[] s = new String[transList.size()];
 		for (int i = 0; i < s.length; i++) {
 			s[i] = transList.get(i).transToString();
@@ -142,9 +136,7 @@ public class TransactionList {
 	 * return all transaction of a user by a String array
 	 */
 	public String[] allUserTrans(int ID) {
-		if (userTrans == null || userTrans.get(0).getID() != ID) {
-			loadUserTrans(ID);
-		}
+		loadUserTrans(ID);
 		String[] s = new String[userTrans.size()];
 		for (int i = 0; i < s.length; i++) {
 			s[i] = userTrans.get(i).userToString();

@@ -63,7 +63,7 @@ public class DockFunctionGUI extends JFrame {
 		            	 }
 				    else{//有空位还车
 				    	if(userlist.isUsing(Qmnum)==true) {//用户正在用车
-			           ret = new ReturnScootersGUI(Qmnum,dockNum,docklist,userlist); //跳到还车GUI
+			           ret = new ReturnScootersGUI(Qmnum,dockNum,userlist,docklist); //跳到还车GUI
 					   }
 				    	else {//用户未借车
 				    		rrep = new Rrep();//重复还车GUI
@@ -105,7 +105,7 @@ public class DockFunctionGUI extends JFrame {
 		            	 }		            	
 		            else{//Dock有车可借
 		            	if(userlist.isUsing(Qmnum)==false) {//用户未使用车
-		            	sel = new SelectScootersGUI(Qmnum,dockNum,docklist,userlist);//跳到借车GUI
+		            	sel = new SelectScootersGUI(Qmnum,dockNum,userlist,docklist);//跳到借车GUI
                         }
 		            	else {//用户已经用了一辆车
 		            		brep = new Brep();//重复借车GUI
