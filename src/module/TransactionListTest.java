@@ -7,7 +7,7 @@ public class TransactionListTest {
 		TransactionList t = new TransactionList();
 		t.sendEmail(161189148);
 //		t.newTrans(161189148, 1, 2, true);
-//		t.loadTrans();
+		t.loadTrans();
 //		String[] s = t.allTrans();
 //		System.out.println(s[0]+s[1]);
 	}
