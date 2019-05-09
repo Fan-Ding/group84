@@ -30,7 +30,7 @@ public class UsageInfoGUI {
 		textarea=new JTextArea(30,40);
 		textarea.setFont(Font1);
 		String[] line=transactionList.allTrans();
-		textarea.setText("       ID           | Dock | Slot | Is Picked  | Year |  Month |  Date |  Hour |  Minutes\n");
+		textarea.setText("       ID           | Dock | Slot | Is Picked  | Year |  Month |  Date |  Hour |  Minutes | OverTime\n");
 		for(int i=0;i<line.length;i++) {
 				textarea.append(line[i]);
 		}
