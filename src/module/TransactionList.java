@@ -137,6 +137,9 @@ public class TransactionList {
 	 */
 	public String[] allUserTrans(int ID) {
 		loadUserTrans(ID);
+		if(userTrans.size()==0) {
+			return null;
+		}
 		String[] s = new String[userTrans.size()];
 		for (int i = 0; i < s.length; i++) {
 			s[i] = userTrans.get(i).userToString();
