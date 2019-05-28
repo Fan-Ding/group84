@@ -6,10 +6,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import module.*;
 
-/**
- * @author ZouShiwen
- *
- */
+/** 
+* A class representing GUI to send email to users . 
+* 
+* <p> The class creates GUI object to display user's all transactions,
+* and make a file if transactions when sending email.
+* 
+* @author Zou Shiwen 
+* @version 1.0 
+* @since 27th April, 2019
+* @see javax.swing
+*/ 
 public class SendEmailGUI {
 
 	JFrame frame;
@@ -22,9 +29,10 @@ public class SendEmailGUI {
 	TransactionList transactionList;
 	int id;
 
-	/**
-	 * Constructor searching and sending email to users
-	 */
+	/** 
+     * This method is the constructor used for
+     * initiate SendEmailGUI objects.
+     */
 	public SendEmailGUI(UserList userlist, TransactionList transactionlist) {
 		userList = userlist;
 		transactionList = transactionlist;
@@ -72,11 +80,22 @@ public class SendEmailGUI {
 		frame.setVisible(true);
 	}
 
-	/**
-	 * Subclass to perform action of searching for users usage with id and display
-	 * them in text area
-	 */
+	/** 
+	* A class is the inner class of SendEmailGUI. 
+	* 
+	* <p> The class implements the interface of ActionListener
+	* and perform accordingly action.
+	* 
+	* @author Zou Shiwen 
+	* @version 1.0 
+	* @since 27th April, 2019
+	*/ 
 	class SearchButtonListener implements ActionListener {
+		/**
+		 * This method is perform action when clicking search button.
+	     * @param event The click action on button.
+	     * @version 1.0
+	     */
 		public void actionPerformed(ActionEvent event) {
 			try {
 				textarea.setText("");
@@ -110,20 +129,45 @@ public class SendEmailGUI {
 
 	}
 
-	/**
-	 * Subclass to perform action of sending email to specific user and generate
-	 * file
-	 */
+	/** 
+	* A class is the inner class of SendEmailGUI,
+	* it perform sending email to users by making file.
+	* 
+	* <p> The class implements the interface of ActionListener
+	* and perform accordingly action.
+	* 
+	* @author Zou Shiwen 
+	* @version 1.0 
+	* @since 27th April, 2019
+	*/ 
 	class EmailButtonListener implements ActionListener {
+		/**
+		 * This method is perform action when clicking send email button.
+	     * @param event The click action on button.
+	     * @version 1.0
+	     */
 		public void actionPerformed(ActionEvent event) {
 			transactionList.sendEmail(id);
 		}
 	}
 
-	/**
-	 * Subclass to perform action of returning to main GUI
-	 */
+	/** 
+	* A class is the inner class of SendEmailGUI,
+	* it perform closing the frame.
+	* 
+	* <p> The class implements the interface of ActionListener
+	* and perform accordingly action.
+	* 
+	* @author Zou Shiwen 
+	* @version 1.0 
+	* @since 27th April, 2019
+	*/ 
 	class RetButtonListener implements ActionListener {
+		/**
+		 * This method is perform action when clicking return button.
+	     * @param event The click action on button.
+	     * @version 1.0
+	     */
 		public void actionPerformed(ActionEvent event) {
 			frame.dispose();
 		}

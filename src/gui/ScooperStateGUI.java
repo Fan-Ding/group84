@@ -5,10 +5,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import module.*;
     
-/**
- * @author ZouShiwen
- *
- */
+/** 
+* A class representing GUI to display all scooters' state . 
+* 
+* <p> The class creates GUI object to display the whole states of 15 scoopers,
+* the number of scooters in use or in dock can be displayed.
+* 
+* @author Zou Shiwen 
+* @version 1.0 
+* @since 26th April, 2019
+* @see javax.swing
+*/ 
 public class ScooperStateGUI {
 	
 	JFrame frame;
@@ -19,9 +26,10 @@ public class ScooperStateGUI {
 	private int parkedNum=0;
 	private int usedNum=0;
 	
-	/**
-	  * Constructor searching all scooper state and displaying
-	  */
+	/** 
+     * This method is the constructor used for
+     * initiate ScoopterStateGUI objects.
+     */
 	public ScooperStateGUI(DockList docklist) {
 		dockList=docklist;
 		calculateScooperInUse(dockList);
@@ -57,18 +65,33 @@ public class ScooperStateGUI {
 		frame.setVisible(true);
 	}
 	
-	/**
-	  * Subclass to perform action of returning to main GUI
-	  */
+	/** 
+	* A class is the inner class of ScooperStateGUI. 
+	* 
+	* <p> The class implements the interface of ActionListener
+	* and perform accordingly action.
+	* 
+	* @author Zou Shiwen 
+	* @version 1.0 
+	* @since 26th April, 2019
+	*/ 
 	class ButtonListener implements ActionListener {
+		/**
+		 * This method is perform action when clicking return button.
+	     * @param event The click action on button.
+	     * @version 1.0
+	     */
 		public void actionPerformed(ActionEvent event) {
 			frame.dispose();
 		}
 	}
 	
 	/**
-	  * Method to calculate number of all used and parked scoopers
-	  */
+	 * This method is to calculate how many scooters are in use 
+	 * and how many are available.
+     * @param dockList All docks' states.
+     * @version 1.0
+     */
 	public void calculateScooperInUse(DockList dockList) {
 		boolean[][] scooperState=new boolean[3][8];
 		for(int i=0;i<3;i++) {

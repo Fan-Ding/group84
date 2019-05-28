@@ -5,10 +5,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import module.*;
 
-/**
- * @author ZouShiwen
- *
- */
+/** 
+* A class representing GUI to display all usage of scooters . 
+* 
+* <p> The class creates GUI object to display the usage of all scooters,
+* it includes dock no, time, pick or return, if overtime...
+* 
+* @author Zou Shiwen 
+* @version 1.0 
+* @since 22th April, 2019
+* @see javax.swing
+*/ 
 public class UsageInfoGUI {
 
 	JFrame frame;
@@ -18,9 +25,10 @@ public class UsageInfoGUI {
 	UserList userList;
 	TransactionList transactionList;
 	
-	/**
-	  * Constructor displaying all usage information
-	  */
+	/** 
+     * This method is the constructor used for
+     * initiate UsageInfoGUI objects.
+     */
 	public UsageInfoGUI(UserList userlist,TransactionList transactionlist) {
 		userList=userlist;
 		transactionList=transactionlist;
@@ -51,10 +59,23 @@ public class UsageInfoGUI {
 		frame.setVisible(true);
 	}
 	
-	/**
-	  * Subclass to perform action of returning to main GUI
-	  */
+	/** 
+	* A class is the inner class of UsageInfoGUI,
+	* it performs closing the frame.
+	* 
+	* <p> The class implements the interface of ActionListener
+	* and perform accordingly action.
+	* 
+	* @author Zou Shiwen 
+	* @version 1.0 
+	* @since 22th April, 2019
+	*/ 
 	class ButtonListener implements ActionListener {
+		/**
+		 * This method is perform action when clicking return button.
+	     * @param event The click action on button.
+	     * @version 1.0
+	     */
 		public void actionPerformed(ActionEvent event) {
 			frame.dispose();
 		}

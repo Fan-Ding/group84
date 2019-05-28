@@ -4,10 +4,18 @@ import java.awt.*;
 import java.awt.event.*;
 import module.*;
 
-/**
- * @author ZouShiwen
- *
- */
+/** 
+* A class representing GUI to display all slots' state in a particular dock . 
+* 
+* <p> The class creates GUI object to display each state of 8 slots
+* in a given dock,
+* the slot state can be parked or empty.
+* 
+* @author Zou Shiwen 
+* @version 1.0 
+* @since 24th April, 2019
+* @see javax.swing
+*/ 
 public class DockStateGUI {
 
 	JFrame frame;
@@ -18,9 +26,10 @@ public class DockStateGUI {
 	int dockNum;
 	DockList dockList;
 	
-	/**
-	  * Constructor displaying all slots' states of a dock
-	  */
+	/** 
+     * This method is the constructor used for
+     * initiate DockStateGUI objects.
+     */
 	 public DockStateGUI(int dock, DockList docklist) {
 		 dockNum=dock;
 		 dockList=docklist;
@@ -54,9 +63,11 @@ public class DockStateGUI {
 			frame.setVisible(true);
 	 }
 	 
-	 /**
-	  * Convert slot boolean states into words.
-	  */
+	   /**
+		 * This method is to check each slot's state in a particular dock. 
+	     * @param dock The no. of dock to check.
+	     * @version 1.0
+	     */
 	public void checkSlotsState(int dock) {
 		boolean[] dockState=new boolean[8];
 		dockState=dockList.dockState(dock);
@@ -69,10 +80,22 @@ public class DockStateGUI {
 	    }
 	}
 	
-	/**
-	  * Subclass to perform action of returning to main GUI
-	  */
+	/** 
+	* A class is the inner class of DockStateGUI. 
+	* 
+	* <p> The class implements the interface of ActionListener
+	* and perform accordingly action.
+	* 
+	* @author Zou Shiwen 
+	* @version 1.0 
+	* @since 26th April, 2019
+	*/ 
 	class ButtonListener implements ActionListener {
+		/**
+		 * This method is perform action when clicking return button.
+	     * @param event The click action on button.
+	     * @version 1.0
+	     */
 		public void actionPerformed(ActionEvent event) {
 			frame.dispose();
 		}
