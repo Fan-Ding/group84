@@ -13,7 +13,10 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+/**
+ * GUI for reminding users that they have repeatedly returned.
+ * @author SunYu
+ */
 public class Rrep extends JFrame {
 
 	private JPanel contentPane;

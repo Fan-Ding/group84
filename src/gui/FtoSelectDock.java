@@ -18,7 +18,10 @@ import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextPane;
-
+/**
+ * GUI for reminding users that the dock they chose has no scooter/slot available.
+ * @author SunYu
+ */
 public class FtoSelectDock extends JFrame {
 
 	private JPanel contentPane;

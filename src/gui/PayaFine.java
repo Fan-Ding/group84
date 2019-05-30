@@ -18,7 +18,10 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.Color;
-
+/**
+ * GUI for paying fines.
+ * @author SunYu
+ */
 public class PayaFine extends JFrame {
 
 	private JPanel contentPane;

@@ -22,7 +22,10 @@ import java.awt.TextField;
 import java.awt.Toolkit;
 import java.awt.Color;
 import java.awt.Dimension;
-
+/**
+ * GUI for entering the QM number then choose next operations.
+ * @author SunYu
+ */
 public class DockFunctionGUI extends JFrame {
 
 	private JPanel contentPane;
