@@ -6,6 +6,11 @@ import javax.swing.*;
 import java.awt.event.ActionListener;
 import module.*;
 
+/**
+ * 
+ * @author liyin
+ *
+ */
 public class EnrollmentGUI implements ActionListener {
 
 	private int ID;
