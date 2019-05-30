@@ -14,7 +14,6 @@ import entity.Dock;
 /**
  * store and control all docks
  * @author Yinze Li
- * @Date 2019年5月30日下午9:41:00
  * TODO
  */
 public class DockList {
@@ -77,8 +76,8 @@ public class DockList {
 	
 	/**
 	 * release the lock of particular slot
-	 * @param dock
-	 * @param slot
+	 * @param dock docknumber
+	 * @param slot slotnumber
 	 */
 	public void release(int dock, int slot) {
 		dockList.get(dock).release(slot);

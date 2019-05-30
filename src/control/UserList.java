@@ -16,7 +16,6 @@ import java.io.IOException;
 /**
  * UserList control all users
  * @author Yinze Li
- * @Date 2019年5月30日下午9:37:19
  * TODO
  */
 public class UserList {

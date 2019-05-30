@@ -14,7 +14,6 @@ import entity.Transaction;
 /**
  * store and control all transactions
  * @author Yinze Li
- * @Date 2019年5月30日下午9:39:27
  * TODO
  */
 public class TransactionList {

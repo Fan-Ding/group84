@@ -5,7 +5,6 @@ import control.DockList;
 /**
  * test docklist
  * @author Yinze Li
- * @Date 2019年5月30日下午9:40:45
  * TODO
  */
 public class DockListTest {

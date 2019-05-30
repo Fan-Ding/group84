@@ -4,7 +4,6 @@ import java.util.Calendar;
 /**
  * 
  * @author Yinze Li
- * @Date 2019年5月30日下午9:37:01
  * TODO
  */
 public class User {
@@ -92,7 +91,9 @@ public class User {
 		return todayUsingTime;
 	}
 	/**
-	 * @param todayUsingTime the todayUsingTime to set
+	 * todayUsingTime the todayUsingTime to set
+	 * @param date day
+	 * @param time usingtime
 	 */
 	public void setTodayUsingTime(int date, int time) {
 		this.todayUsingTime[0] = date;

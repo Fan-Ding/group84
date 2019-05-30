@@ -5,7 +5,6 @@ import control.TransactionList;
 /**
  * test transactionList
  * @author Yinze Li
- * @Date 2019年5月30日下午9:38:49
  * TODO
  */
 public class TransactionListTest {

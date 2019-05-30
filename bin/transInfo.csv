@@ -7,3 +7,5 @@ ID,Dock,Slot,Picking_or_not,Year,Month,Date,Hour,Minute,isOverTime
 123456789,1,6,false,2019,5,10,8,24,false
 123454321,1,0,true,2019,5,10,8,26,false
 123454321,1,7,false,2019,5,10,8,26,false
+161189147,2,4,true,2019,5,31,1,32,false
+161189147,2,7,false,2019,5,31,1,32,false
