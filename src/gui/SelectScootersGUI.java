@@ -2,18 +2,15 @@ package gui;
 
 import java.awt.*;
 import javax.swing.*;
-import javax.swing.text.html.HTML.Tag;
-
-import org.omg.CORBA.PRIVATE_MEMBER;
-
-import com.sun.jndi.url.iiopname.iiopnameURLContextFactory;
-
 import module.*;
-
 import java.awt.event.ActionListener;
-import java.util.Set;
 import java.awt.event.ActionEvent;
 
+/**
+ * This class is a GUI for users to pick up a scooter.
+ * @author hp
+ *
+ */
 public class SelectScootersGUI {
 
 	private JFrame frame;

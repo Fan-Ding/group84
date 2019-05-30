@@ -8,6 +8,11 @@ import java.awt.Font;
 import java.awt.Color;
 import java.awt.SystemColor;
 
+/**
+ * This class is to inform users that a scooter has been successfully returned.
+ * @author hp
+ *
+ */
 public class SuccessfullyReturned {
 
 	private JFrame frame;

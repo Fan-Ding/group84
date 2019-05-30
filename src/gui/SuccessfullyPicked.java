@@ -8,6 +8,11 @@ import java.awt.Font;
 import java.awt.Color;
 import java.awt.SystemColor;
 
+/**
+ * This class is to inform users that a scooter has been successfully picked up.
+ * @author hp
+ *
+ */
 public class SuccessfullyPicked {
 
 	private JFrame frame;

@@ -2,8 +2,6 @@ package gui;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-
-import module.Dock;
 import module.DockList;
 import module.UserList;
 
@@ -14,7 +12,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Color;
 import javax.swing.JButton;
-
+/**
+ * This class is to inform users that a failure occur when picking 
+ * up a scooter.
+ * @author hp
+ *
+ */
 public class PickFailed {
 
 	private JFrame frame;

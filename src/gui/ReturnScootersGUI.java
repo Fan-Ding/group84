@@ -7,7 +7,11 @@ import module.*;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
+/**
+ * This class is a GUI for users to return a scooter.
+ * @author hp
+ *
+ */
 public class ReturnScootersGUI {
 
 	private JFrame frame;
