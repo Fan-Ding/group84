@@ -8,6 +8,13 @@ import module.DockList;
 import module.TransactionList;
 import module.UserList;
 
+
+/**
+ * define a class of a MainGUI
+ * 
+ * @author dingfan
+ *
+ */
 class MainGUI extends JFrame implements ActionListener {
 
 	private UserDockSelectGUI userDockSelectGUI;

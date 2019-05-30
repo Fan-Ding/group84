@@ -12,6 +12,8 @@ import module.TransactionList;
 import module.UserList;
 
 /**
+ * define a class of a user Dock Select GUI
+ * 
  * @author dingfan
  *
  */

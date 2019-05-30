@@ -19,6 +19,8 @@ import module.TransactionList;
 import module.UserList;
 
 /**
+ * define a class of a Manager Function GUI
+ * 
  * @author dingfan
  *
  */
