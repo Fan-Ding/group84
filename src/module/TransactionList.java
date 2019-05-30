@@ -9,7 +9,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
-
+/**
+ * store and control all transactions
+ * @author Yinze Li
+ * @Date 2019年5月30日下午9:39:27
+ * TODO
+ */
 public class TransactionList {
 
 	private ArrayList<Transaction> transList;
@@ -19,10 +24,15 @@ public class TransactionList {
 		transList = null;
 		userTrans = null;
 	}
-
+	
 	/**
 	 * when a user pick or return a scooter, generate a transaction and write in to
 	 * file
+	 * @param ID id
+	 * @param dock docknumber
+	 * @param slot slotnumber
+	 * @param isPick pick or not
+	 * @param isOverTime overdue or not
 	 */
 	public void newTrans(int ID, int dock, int slot, boolean isPick, boolean isOverTime) {
 		Calendar cal = Calendar.getInstance();
@@ -79,6 +89,7 @@ public class TransactionList {
 
 	/**
 	 * load a particular user's transaction into ArrayList
+	 * @param ID id
 	 */
 	public void loadUserTrans(int ID) {
 		loadTrans();
@@ -96,6 +107,7 @@ public class TransactionList {
 
 	/**
 	 * send Email by generate a file at "src/ID.csv"
+	 * @param ID id
 	 */
 	public void sendEmail(int ID) {
 		loadUserTrans(ID);
@@ -122,6 +134,7 @@ public class TransactionList {
 
 	/**
 	 * return all transaction by a String array
+	 * @return all transactions
 	 */
 	public String[] allTrans() {
 		loadTrans();
@@ -134,6 +147,8 @@ public class TransactionList {
 
 	/**
 	 * return all transaction of a user by a String array
+	 * @param ID id
+	 * @return all transactions
 	 */
 	public String[] allUserTrans(int ID) {
 		loadUserTrans(ID);

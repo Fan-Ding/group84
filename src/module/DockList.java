@@ -9,6 +9,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * store and control all docks
+ * @author Yinze Li
+ * @Date 2019年5月30日下午9:41:00
+ * TODO
+ */
 public class DockList {
 
 	private ArrayList<Dock> dockList;
@@ -18,6 +24,10 @@ public class DockList {
 		init();
 	}
 
+	/**
+	 * initiate the dockList from file
+	 * 
+	 */
 	public void init() {
 		dockList = new ArrayList<Dock>();
 		maxSlot = 0;
@@ -39,7 +49,10 @@ public class DockList {
 			e.printStackTrace();
 		}
 	}
-
+	
+	/**
+	 * save dock state to file
+	 */
 	public void dockSave() {
 		try {
 			File csv = new File("src/dockInfo.csv");
@@ -62,6 +75,8 @@ public class DockList {
 	
 	/**
 	 * release the lock of particular slot
+	 * @param dock
+	 * @param slot
 	 */
 	public void release(int dock, int slot) {
 		dockList.get(dock).release(slot);
@@ -69,6 +84,8 @@ public class DockList {
 	
 	/**
 	 * lock particular slot
+	 * @param dock docknumber
+	 * @param slot slotnumber
 	 */
 	public void lock(int dock, int slot) {
 		dockList.get(dock).lock(slot);
@@ -76,6 +93,8 @@ public class DockList {
 	
 	/**
 	 * when a scooter is returned, call this method to change the slot's state
+	 * @param dock docknumber
+	 * @param slot slotnumber
 	 */
 	public void pickScooter(int dock, int slot) {
 		dockList.get(dock).pickScooter(slot);
@@ -83,14 +102,17 @@ public class DockList {
 	
 	/**
 	 * when a scooter is picked up, call this method to change the slot's state
+	 * @param dock docknumber
+	 * @param slot slotnumber
 	 */
 	public void returnScooter(int dock,int slot) {
 		dockList.get(dock).returnScooter(slot);
 	}
-	
 	/**
 	 * randomly choose a slot for returning a scooter, 
 	 * if no slot available, return -1
+	 * @param dock docknumber
+	 * @return slotnumber
 	 */
 	public int pickWhich(int dock) {
 		return dockList.get(dock).pickWhich();
@@ -99,6 +121,8 @@ public class DockList {
 	/**
 	 * randomly choose a slot for picking up a scooter, 
 	 * if no scooter here, return -1
+	 * @param dock docknumber
+	 * @return slotnumber
 	 */
 	public int returnWhich(int dock) {
 		return dockList.get(dock).returnWhich();
@@ -106,6 +130,8 @@ public class DockList {
 	
 	/**
 	 * return how many scooters in the dock
+	 * @param dock docknumber
+	 * @return number of scooters
 	 */
 	public int howManyScooter(int dock) {
 		return dockList.get(dock).getAvailable();
@@ -113,6 +139,8 @@ public class DockList {
 	
 	/**
 	 * return all the slots' states in a dock 
+	 * @param dock docknumber
+	 * @return dockstate
 	 */
 	public boolean[] dockState(int dock) {
 		return dockList.get(dock).dockState();

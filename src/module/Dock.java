@@ -3,6 +3,11 @@
  */
 package module;
 
+/**
+ * 
+ * @author liyin
+ *
+ */
 public class Dock {
 
 	private Slot[] dock;
@@ -13,7 +18,8 @@ public class Dock {
 	}
 
 	/**
-	 * load slots' states
+	 * load dock's state
+	 * @param slots string of slots' state
 	 */
 	public void dockInit(String[] slots) {
 		available = 0;
@@ -29,6 +35,7 @@ public class Dock {
 
 	/**
 	 * release the lock of particular slot
+	 * @param slot slotnumber
 	 */
 	public void release(int slot) {
 		dock[slot].setLock(false);
@@ -36,6 +43,7 @@ public class Dock {
 
 	/**
 	 * lock particular slot
+	 * @param slot slotnumber
 	 */
 	public void lock(int slot) {
 		dock[slot].setLock(true);
@@ -43,6 +51,7 @@ public class Dock {
 
 	/**
 	 * when a scooter is returned, call this method to change the slot's state
+	 * @param slot slotnumber
 	 */
 	public void returnScooter(int slot) {
 		dock[slot].setScooter(true);
@@ -51,6 +60,7 @@ public class Dock {
 
 	/**
 	 * when a scooter is picked up, call this method to change the slot's state
+	 * @param slot slotnumber
 	 */
 	public void pickScooter(int slot) {
 		dock[slot].setScooter(true);
@@ -60,6 +70,7 @@ public class Dock {
 	/**
 	 * randomly choose a slot for returning a scooter, if no slot available, return
 	 * -1
+	 * @return slotnumber
 	 */
 	public int returnWhich() {
 		if (available == dock.length) {
@@ -80,6 +91,7 @@ public class Dock {
 	/**
 	 * randomly choose a slot for picking up a scooter, if no scooter here, return
 	 * -1
+	 * @return slotnumber
 	 */
 	public int pickWhich() {
 		if (available == 0) {
@@ -115,6 +127,7 @@ public class Dock {
 	
 	/**
 	 * return all the slots' states in a dock 
+	 * @return slots' states
 	 */
 	public boolean[] dockState() {
 		boolean[] state = new boolean[dock.length];

@@ -10,6 +10,12 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * UserList control all users
+ * @author Yinze Li
+ * @Date 2019年5月30日下午9:37:19
+ * TODO
+ */
 public class UserList {
 
 	private ArrayList<User> userList;
@@ -73,6 +79,9 @@ public class UserList {
 
 	/**
 	 * enroll a user
+	 * @param ID id
+	 * @param name name
+	 * @param email email
 	 */
 	public void enroll(int ID, String name, String email) {
 		User user = new User(ID, name, email);
@@ -81,6 +90,7 @@ public class UserList {
 
 	/**
 	 * delete a user
+	 * @param ID id
 	 */
 	public void delete(int ID) {
 		int i = search(ID);
@@ -93,6 +103,7 @@ public class UserList {
 
 	/**
 	 * if a user pick up a scooter, record picking time
+	 * @param ID id
 	 */
 	public void pickRecord(int ID) {
 		int i = search(ID);
@@ -103,6 +114,8 @@ public class UserList {
 
 	/**
 	 * if a user return a scooter, calculate using time
+	 * @param ID id
+	 * @return using time
 	 */
 	public int[] usingMinute(int ID) {
 		int[] time = new int[2];
@@ -128,6 +141,7 @@ public class UserList {
 
 	/**
 	 * ban a user
+	 * @param ID id
 	 */
 	public void ban(int ID) {
 		int i = search(ID);
@@ -140,6 +154,8 @@ public class UserList {
 
 	/**
 	 * check if a user is using a scooter
+	 * @param ID id
+	 * @return using or not
 	 */
 	public boolean isUsing(int ID) {
 		int i = search(ID);
@@ -148,6 +164,7 @@ public class UserList {
 
 	/**
 	 * unban a user
+	 * @param ID id
 	 */
 	public void unban(int ID) {
 		int i = search(ID);
@@ -158,6 +175,10 @@ public class UserList {
 		}
 	}
 	
+	/**
+	 * make unuse
+	 * @param ID id
+	 */
 	public void unuse(int ID) {
 		int i = search(ID);
 		if (i >= 0) {
@@ -166,9 +187,11 @@ public class UserList {
 			System.out.println("ID is not existed");
 		}
 	}
-
+	
 	/**
 	 * check if ID exists
+	 * @param ID id
+	 * @return exist or not
 	 */
 	public boolean checkIDExist(int ID) {
 		User user;
@@ -182,7 +205,9 @@ public class UserList {
 	}
 
 	/**
-	 * check ID format
+	 * check id format
+	 * @param ID id
+	 * @return right or wrong
 	 */
 	public boolean checkIDFormat(int ID) {
 		if (ID < 99999999 || ID > 1000000000) {
@@ -193,6 +218,8 @@ public class UserList {
 
 	/**
 	 * check Email format
+	 * @param email email
+	 * @return right or wrong
 	 */
 	public boolean checkEmailFormat(String email) {
 		int i, j = 0;
@@ -212,6 +239,8 @@ public class UserList {
 
 	/**
 	 * search a user by ID, return his position in the ArrayList
+	 * @param ID id
+	 * @return position in array list
 	 */
 	public int search(int ID) {
 		for (int i = 0; i < userList.size(); i++) {
@@ -224,6 +253,8 @@ public class UserList {
 	
 	/**
 	 * search a user by ID, return if a user is banned
+	 * @param ID id
+	 * @return ban or not
 	 */
 	public boolean isBan(int ID) {
 		int i = search(ID);
@@ -232,11 +263,16 @@ public class UserList {
 
 	/**
 	 * return the size of user list
+	 * @return length
 	 */
 	public int length() {
 		return userList.size();
 	}
 	
+	/**
+	 * all information of all users
+	 * @return info
+	 */
 	public String[] allInfo() {
 		if(userList.size() == 0) {
 			return null;
@@ -248,6 +284,11 @@ public class UserList {
 		return s;
 	}
 	
+	/**
+	 * all info of a user
+	 * @param ID id
+	 * @return info
+	 */
 	public String oneUserInfo(int ID) {
 		int i = search(ID);
 		if(i == -1) {

@@ -1,7 +1,12 @@
 package module;
 
 import java.util.Calendar;
-
+/**
+ * 
+ * @author Yinze Li
+ * @Date 2019年5月30日下午9:40:09
+ * TODO
+ */
 public class Transaction {
 	private int ID;
 	private int dock;
