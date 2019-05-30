@@ -24,7 +24,7 @@ import control.UserList;
  * @author dingfan
  *
  */
-class ManagerDockSelectGUI extends JFrame implements ActionListener {
+public class ManagerDockSelectGUI extends JFrame implements ActionListener {
 	
 	private DockList dockList;
 
