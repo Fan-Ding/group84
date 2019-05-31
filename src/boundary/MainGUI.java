@@ -8,7 +8,6 @@ import control.DockList;
 import control.TransactionList;
 import control.UserList;
 
-
 /**
  * define a class of a MainGUI
  * 
@@ -26,6 +25,7 @@ class MainGUI extends JFrame implements ActionListener {
 
 	private JButton userButton;
 	private JButton managerButton;
+	private JButton save;
 
 	public MainGUI(DockList docklist, UserList userlist, TransactionList transactionlist) {
 
@@ -35,10 +35,12 @@ class MainGUI extends JFrame implements ActionListener {
 
 		userButton = new JButton("user");
 		managerButton = new JButton("manager");
+		save = new JButton("save and exit");
 
 		setLayout(new BorderLayout());
 		this.getContentPane().add(userButton, BorderLayout.WEST);
 		this.getContentPane().add(managerButton, BorderLayout.EAST);
+		this.getContentPane().add(save, BorderLayout.CENTER);
 
 		this.setTitle("Scooper Sharing System");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -47,7 +49,7 @@ class MainGUI extends JFrame implements ActionListener {
 
 		userButton.addActionListener(this);
 		managerButton.addActionListener(this);
-
+		save.addActionListener(this);
 	}
 
 	@Override
@@ -57,10 +59,13 @@ class MainGUI extends JFrame implements ActionListener {
 		if (eventSource.equals(this.userButton)) {
 			System.out.println("user");
 			userDockSelectGUI = new UserDockSelectGUI(dockList, userList, transactionList);
-			
+
 		} else if (eventSource.equals(this.managerButton)) {
 			System.out.printf("manager");
 			managerFunctionGUI = new ManagerFunctionGUI(dockList, userList, transactionList);
+		} else if (eventSource.equals(this.save)) {
+			dockList.dockSave();
+			userList.save();
 		}
 	}
 
