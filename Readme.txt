@@ -45,7 +45,7 @@ Campus Scooter Sharing System Version 1.0 is used in scooter docks and manager c
        "javac -d ../bin ./entity/*.java ./control/*.java ./boundary/*.java
        "cd .."
        "cd bin"
-       "java boundary.MainGUI"
+       "java boundary.MainGUITest"
     
     If there is error, please check your JAVA configuration.
 
