@@ -22,13 +22,13 @@ public class Rrep extends JFrame {
 	private JPanel contentPane;
 
 	public Rrep() {
-		JFrame jf = new JFrame("Fail");		
-		Toolkit tk = this.getToolkit();// 得到窗口工具条
+		JFrame jf = new JFrame("Fail");
+		Toolkit tk = this.getToolkit();
 		int width = 650;
 		int height = 500;
 		Dimension dm = tk.getScreenSize();
 		jf.setLocation((int) (dm.getWidth() - width) / 2,
-				(int) (dm.getHeight() - height) / 2);// 显示在屏幕中央
+				(int) (dm.getHeight() - height) / 2);
 		
 		jf.setSize(450, 300);
 		jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -43,7 +43,6 @@ public class Rrep extends JFrame {
 		panel.setLayout(new BorderLayout(0, 0));
 		
 		JLabel lblNewLabel = new JLabel("<html><body><p>This account has not borrow any scooter, please borrow a scooter first then try again!");
-		lblNewLabel.setFont(new Font("宋体", Font.PLAIN, 20));
 		panel.add(lblNewLabel, BorderLayout.CENTER);
 		
 		JButton btnOk = new JButton("OK");
